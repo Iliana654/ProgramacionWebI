@@ -1,0 +1,235 @@
+/* Fuente elegante */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #999;
+}
+
+main {
+  padding: 40px;
+}
+
+#productos h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.contenedor-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.producto {
+  border: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.producto:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.producto h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.producto p {
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.producto button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.producto button:hover {
+  background-color: #444;
+}
+
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+  border-top: 1px solid #ddd;
+}
+
+footer .redes a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+footer .redes a:hover {
+  color: #999;
+}
+
+.carrito-modal {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .carrito-modal.activo {
+    right: 0;
+  }
+  
+  .carrito-contenido {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  .carrito-header {
+    background: #ccff00; /* verde lima */
+    color: black;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  #carrito-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+  }
+  
+  .carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .carrito-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .carrito-info {
+    flex: 1;
+    font-size: 14px;
+  }
+  
+  .cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #ccc;
+    padding: 2px 6px;
+  }
+  
+  .cantidad-control button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .carrito-footer {
+    border-top: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .carrito-footer .pagar {
+    background: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .carrito-footer .ver-carrito {
+    background: #ccff00;
+    color: black;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .btn-eliminar {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  

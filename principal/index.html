@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threads & Four - Bienvenida</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/fontawesome/fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="/css/bootstrap-3.4.1-dist/css/bootstrap.min.css"> -->
+</head>
+<body>
+    <div class="navbar">
+        <ul class="nav">
+            <li><a class="brand" href="#" id="p-index"><img src="/imagenes/brandTyF.png" alt="Brand" style="height: 80px;"></a></li>
+            <div class="menu">
+                <li><a href="#">Nuevo</a></li>
+                <li><a href="#" id="p-hombres">Hombres</a></li>
+                <li><a href="#" id="p-mujeres">Mujeres</a></li>
+                <li><a href="#"><img src="/imagenes/shopping-bag.png" alt="Cart" style="height: 30px;">(0)</a></li>
+            </div>
+        </ul>
+    </div>
+    <section id="pag-principal" class="active-on">
+        <div class="container text-center">
+            <h1>Bienvenido a Threads & Four</h1>
+            <p class="text-size-20">Donde tenemos las mejores prendas de calidad.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <a href="#" id="img-p-hombres" class="img-button">
+                    <img class="img-modules" src="/imagenes/men.jpg" alt="Men">
+                    <div class="img-modules-text text-size-30 img-text-w-400">Hombres</div>
+                </a>
+                
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="#" id="img-p-newarrivals" class="img-button">
+                    <img class="img-modules" src="/imagenes/camisanueva.jpg" alt="NewShirts">
+                    <div class="img-modules-text text-size-30 img-text-w-550">Prendas Nuevas</div>
+                </a>
+                
+            </div>
+            <div class="col-md-3 text-center">
+                <a href="#" id="img-p-mujeres" class="img-button">
+                    <img class="img-modules" src="/imagenes/woman.jpg" alt="Woman">
+                    <div class="img-modules-text text-size-30 img-text-w-400">Mujeres</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="pag-hombres" class="active-off">
+        <div class="container text-center">
+            <div class="content-control">
+                <div class="content-w-50"><img class="img-background margin-10" src="/imagenes/men-background.jpg" alt=""></div>
+                
+                <div class="content-w-50 text-left">
+                    <h1>Prendas para Hombre</h1>
+                    <p class="text-size-20">Explora nuestro catálogo de mejor ropa para caballero.</p>
+                </div>
+            </div>
+            
+            <div class="content-control">
+                <div class="content-w-20">
+                    <h1 class="text-size-20">Categorias</h1>
+                    <p><a class="link-style-1" href="#">Camisas</a></p>
+                    <p><a class="link-style-1" href="#">Camisetas</a></p>
+                    <p><a class="link-style-1" href="#">Pantalones</a></p>
+                    <p><a class="link-style-1" href="#">Calsonetas</a></p>
+                    <p><a class="link-style-1" href="#">Zapatos</a></p>
+                    <hr>
+
+                    <h1 class="text-size-20">Talla</h1>
+                    <div class="btn-talla">
+                        <button type="button">28</button>
+                        <button type="button">29</button>
+                        <button type="button">30</button>
+                        <button type="button">31</button>
+                        <button type="button">32</button>
+                        <button type="button">33</button>
+                        <button type="button">34</button>
+                        <button type="button">35</button>
+                        <button type="button">36</button>
+                        <button type="button">37</button>
+                        <button type="button">38</button>
+                        <button type="button">39</button>
+                        <button type="button">40</button>
+                        <button type="button">XS</button>
+                        <button type="button">S</button>
+                        <button type="button">M</button>
+                        <button type="button">L</button>
+                        <button type="button">XL</button>
+                    </div>
+                    <hr>
+
+                    <h1 class="text-size-20">Precio</h1>
+                    <p><a class="link-style-1" href="#">Alto</a></p>
+                    <p><a class="link-style-1" href="#">Medio</a></p>
+                    <p><a class="link-style-1" href="#">Bajo</a></p>
+                </div>
+                <div class="content-w-80">
+                    <div id="productos-hombres" class="productos-catalogo">
+                        <!-- Aquí se cargarán los productos de hombres desde el JSON -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section id="pag-mujeres" class="active-off">
+        <div class="container text-center">
+            <div class="content-control">
+                <div class="content-w-50"><img class="img-background margin-10" src="/imagenes/woman-background.jpg" alt=""></div>
+                
+                <div class="content-w-50 text-left">
+                    <h1>Prendas para Mujer</h1>
+                    <p class="text-size-20">Explora nuestro catálogo de mejor ropa para dama.</p>
+                </div>
+            </div>
+            <div class="content-control">
+                <div class="content-w-20">
+                    <h1 class="text-size-20">Categorias</h1>
+                    <p><a class="link-style-1" href="#">Blusas</a></p>
+                    <p><a class="link-style-1" href="#">Faldas</a></p>
+                    <p><a class="link-style-1" href="#">Pantalones</a></p>
+                    <p><a class="link-style-1" href="#">Short</a></p>
+                    <p><a class="link-style-1" href="#">Tops</a></p>
+                    <p><a class="link-style-1" href="#">Vestidos</a></p>
+                    <p><a class="link-style-1" href="#">Zapatos</a></p>
+                    <hr>
+
+                    <h1 class="text-size-20">Talla</h1>
+                    <div class="btn-talla">
+                        <button type="button">28</button>
+                        <button type="button">29</button>
+                        <button type="button">30</button>
+                        <button type="button">31</button>
+                        <button type="button">32</button>
+                        <button type="button">33</button>
+                        <button type="button">34</button>
+                        <button type="button">35</button>
+                        <button type="button">36</button>
+                        <button type="button">37</button>
+                        <button type="button">38</button>
+                        <button type="button">39</button>
+                        <button type="button">40</button>
+                        <button type="button">XS</button>
+                        <button type="button">S</button>
+                        <button type="button">M</button>
+                        <button type="button">L</button>
+                        <button type="button">XL</button>
+                    </div>
+                    <hr>
+
+                    <h1 class="text-size-20">Precio</h1>
+                    <p><a class="link-style-1" href="#">Alto</a></p>
+                    <p><a class="link-style-1" href="#">Medio</a></p>
+                    <p><a class="link-style-1" href="#">Bajo</a></p>
+                </div>
+                <div class="content-w-80">
+                    <div id="productos-mujeres" class="productos-catalogo">
+                        <!-- Aquí se cargarán los productos de hombres desde el JSON -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pag-historia" class="active-off" style="padding: 50px 0;">
+        <div class="container">
+            <h1 class="margin-20 text-center font-size-40 font-family">¿Quiénes somos?</h1>
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Nuestra Historia</h1>
+              <p class="contenido">
+                Threads & Four nació como una tienda 100% virtual con la misión de ofrecer prendas modernas y de calidad sin necesidad de un espacio físico. 
+                Desde nuestros inicios, hemos apostado por la moda accesible y cómoda, cuidando cada detalle de nuestro catálogo.
+              </p>
+              <p class="contenido">
+                Gracias a nuestra plataforma en línea, nuestros clientes pueden explorar y comprar desde cualquier lugar, disfrutando de una experiencia rápida, segura y confiable. 
+                Creemos que la moda es una forma de expresión, y trabajamos para que cada prenda inspire confianza y estilo.
+              </p>
+              <div style="text-align: center; margin-top: 20px;">
+                <img src="/imagenes/brandTyF.png" alt="Historia de la tienda" style="max-width: 80%; border-radius: 8px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Nuestra Misión</h1>
+              <p class="contenido">
+                Ofrecer prendas modernas, de calidad y accesibles a través de una experiencia de compra 100% en línea, rápida, segura y confiable. 
+                En Threads & Four creemos que la moda es una forma de expresión personal, por lo que cuidamos cada detalle para que nuestras prendas inspiren confianza, 
+                comodidad y estilo en cada cliente.
+              </p>
+              <p class="contenido">
+                Gracias a nuestra plataforma en línea, nuestros clientes pueden explorar y comprar desde cualquier lugar, disfrutando de una experiencia rápida, segura y confiable. Creemos que la moda es una forma de expresión, y trabajamos para que cada prenda inspire confianza y estilo.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Nuestra Visión</h1>
+              <p class="contenido">
+                Consolidarnos como la tienda en línea de ropa preferida a nivel nacional e internacional, reconocida por la calidad de sus prendas, 
+                la excelencia en el servicio y la capacidad de reinventar la moda accesible, 
+                conectando con clientes que buscan expresar su personalidad a través de su estilo.
+              </p>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Nuestros Valores</h1>
+              <p class="contenido">
+                Consolidarnos como la tienda en línea de ropa preferida a nivel nacional e internacional, reconocida por la calidad de sus prendas, 
+                la excelencia en el servicio y la capacidad de reinventar la moda accesible, 
+                conectando con clientes que buscan expresar su personalidad a través de su estilo.
+              </p>
+            </div>
+          </div>
+    </section>
+    <!-- <section id="pag-comprar" class="active-off" style="padding: 50px 0;">
+        <div class="container">
+            <h1 class="margin-20 text-center font-size-32 font-family">¿Quiénes somos?</h1>
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Nuestra Historia</h1>
+              <p class="contenido">
+                Threads & Four nació como una tienda 100% virtual con la misión de ofrecer prendas modernas y de calidad sin necesidad de un espacio físico. 
+                Desde nuestros inicios, hemos apostado por la moda accesible y cómoda, cuidando cada detalle de nuestro catálogo.
+              </p>
+              <p class="contenido">
+                Gracias a nuestra plataforma en línea, nuestros clientes pueden explorar y comprar desde cualquier lugar, disfrutando de una experiencia rápida, segura y confiable. 
+                Creemos que la moda es una forma de expresión, y trabajamos para que cada prenda inspire confianza y estilo.
+              </p>
+              <div style="text-align: center; margin-top: 20px;">
+                <img src="/imagenes/brandTyF.png" alt="Historia de la tienda" style="max-width: 80%; border-radius: 8px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Nuestra Misión</h1>
+              <p class="contenido">
+               HOLA
+              </p>
+              <p class="contenido">
+                Gracias a nuestra plataforma en línea, nuestros clientes pueden explorar y comprar desde cualquier lugar, disfrutando de una experiencia rápida, segura y confiable. Creemos que la moda es una forma de expresión, y trabajamos para que cada prenda inspire confianza y estilo.
+              </p>
+            </div>
+          </div>
+    </section> -->
+     <section id="pag-preguntas" class="active-off" style="padding: 50px 0;">
+        <div class="container">
+            <div class="card">
+              <h1 class="font-family font-size-32 text-center margin-20px">Preguntas Frecuentes</h1>
+              <details class="faq-item">
+                <summary>¿Cómo crear una cuenta?</summary>
+                <p>Haz clic en “Registrarse”, completa tus datos y confirma el correo.</p>
+              </details>
+          
+              <details class="faq-item">
+                <summary>Olvidé mi contraseña ¿Cómo la recupero?</summary>
+                <p>En “Iniciar sesión” elige “Olvidé mi contraseña”, ingresa tu correo y sigue el enlace que te enviamos.</p>
+              </details>
+          
+              <details class="faq-item">
+                <summary>¿Cómo realizar un pedido?</summary>
+                <p>Explora el catálogo, agrega al carrito y completa el pago seguro en línea.</p>
+              </details>
+          
+              <details class="faq-item">
+                <summary>No encuentro el producto que busco ¿Qué hago?</summary>
+                <p>Escríbenos por WhatsApp o correo y te ayudamos a localizarlo o te sugerimos alternativas.</p>
+              </details>
+          
+              <details class="faq-item">
+                <summary>¿Cuál es el plazo de entrega?</summary>
+                <p>De 24 a 72 horas hábiles en zonas principales (puede variar por destino).</p>
+              </details>
+          
+              <details class="faq-item">
+                <summary>¿Cuál es la zona de cobertura?</summary>
+                <p>Enviamos a todo el país. Verifica tu código postal al finalizar la compra.</p>
+              </details>
+          
+              <details class="faq-item">
+                <summary>¿Cuál es el costo del envío?</summary>
+                <p>Se calcula automáticamente según tu ubicación y peso del pedido antes de pagar.</p>
+              </details>
+          </div>
+    </section>
+    <br>
+    <!--  ////////////////////// FOOTER ////////////////////// -->
+    <footer class="container text-center">
+        <div class="row bg-footer">
+            <div class="col-md-3 bg-brand-footer">
+                <img class="img-modules margin-20" src="/imagenes/brand-white.png" alt="Men" style="height: 70px;">
+                <p  class="text-left margin-left-40"><i class="fa fa-envelope"></i>Contacto: threadsandfour@gmail.com</p>
+                <p class="text-left margin-left-40"><i class="fab fa-facebook"></i><a href="https://www.facebook.com/share/16szK7qCTM/">Facebook</a></p>
+                <p class="text-left margin-left-40"> <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/threadsandfour/">Instagram</a></p>
+                <p class="text-left margin-left-40"><i class="fa fa-phone"></i>Tel: +(504) 9841-2851</p>
+            </div>
+            <div class="col-md-2 text-center">
+                <p class="text-size-20">Tienda</p>
+                <p class="margin-down"><a class="link-style-1" href="#">Nuevo</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#" id="p-hombres">Hombre</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#" id="p-mujeres">Mujer</a></p>
+            </div>
+            <div class="col-md-2">
+                <p class="text-size-20">Información</p>
+                <p class="margin-down"><a class="link-style-1" href="#"id="p-historia">¿Quiénes somos?</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#" id="p-comprar">¿Cómo comprar?</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#" id="p-preguntas">Preguntas Frecuentes</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#">Atención al cliente</a></p>
+            </div>
+            <div class="col-md-25">
+                <p class="text-size-20">Términos y condiciones</p>
+                <p class="margin-down"><a class="link-style-1" href="#">Políticas de uso</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#">Envío y devoluciones</a></p>
+                <p class="margin-down"><a class="link-style-1" href="#">Métodos de pago</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 bg-footer-Two">
+            </div>
+            <div class="col-md-7 text-center">
+                <p>© 2025 Threads & Four - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/control-nav.js"></script>
+    <script src="/js/men-content2.js"></script>
+    <script src="/js/women-content2.js"></script>
+    <script src="/css/content-J.css"></script>
+</body>
+</html>

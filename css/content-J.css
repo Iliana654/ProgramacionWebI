@@ -1,0 +1,171 @@
+body {
+    font-family: 'Lora', serif;
+}
+
+:root {
+    --color-primary-1: #2C2F33;
+    --color-primary-2: #C8A25A;
+    --color-second-1: #EAEAEA;
+    --color-second-2: #F5F1E8;
+    --color-white: #FFFFFF;
+    --color-gray-clear: #9A9A9A;
+}
+
+.container {
+    /* background-color: rgb(200, 197, 197); */
+    width: 100%;
+    margin: 0 auto 0 auto;
+}
+
+.align-items {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-size-20 {
+    font-size: 20px;
+}
+
+.row {
+    /* background-color: red; */
+    display: flex;
+}
+
+.col-md-2 {
+    width: 20%;
+}
+
+.col-md-25 {
+    width: 25%;
+}
+
+.col-md-3 {
+    width: 30%;
+}
+
+.col-md-4 {
+    width: 40%;
+}
+
+.col-md-7 {
+    width: 70%;
+}
+
+.img-modules {
+    height: 500px;
+}
+
+.bg-brand-footer {
+    background-color: var(--color-primary-1);
+    color: var(--color-white);
+}
+
+.bg-footer {
+    background-color: var(--color-second-1);
+}
+
+.bg2 {
+    background-color: green;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.margin-40 {
+    margin: 40px;
+}
+
+.margin-left-40 {
+    margin-left: 40px;
+}
+
+.link-style-1 {
+    text-decoration: none;
+    color: var(--color-primary-1);
+}
+
+.active-on {
+    display: block;
+}
+
+.active-off {
+    display: none;
+}
+
+.productos-catalogo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.titulo-categoria {
+  margin-top: 16px;
+  font-size: 30px;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  padding-bottom: 16px;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.fila-productos {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.producto-card {
+  width: 240px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 10px;
+  border-color: gray;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.producto-card:hover {
+  border-color: goldenrod;
+  border-width: 3px;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+}
+
+.producto-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.producto-img:hover {
+  border-width: 3px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+} 
+
+.btn-comprar {
+  background-color: gray;
+  color: white;
+  padding: 6px 16px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-comprar:hover {
+  background-color: goldenrod;
+  transform: scale(1.05);
+}
