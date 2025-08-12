@@ -47,6 +47,7 @@ body {
   margin:12px 0; 
   overflow:hidden; 
   background:#fff;
+  font-family: 'Lora', serif; 
 }
 .faq-item > summary 
 {
@@ -57,6 +58,7 @@ body {
   display:flex; 
   align-items:center; 
   justify-content:space-between;
+  font-family: 'Lora', serif; 
 }
 .faq-item > summary::-webkit-details-marker 
 { display:none; 
@@ -71,7 +73,7 @@ body {
 { padding:0 16px 16px; margin:0; color:#333; line-height:1.6; 
 }
 .font-family 
-{ font-family: system-ui, Arial, sans-serif; 
+{ font-family: 'Lora', serif; 
 }
 .font-size-32 
 { font-size: 32px; 
@@ -89,7 +91,7 @@ body {
 }
 
 .font-family{
-    font-family:'Playfair Display', serif;
+    font-family: 'Lora', serif;
 }
 
 .card{
@@ -189,6 +191,19 @@ a{
 
 }
 
+.valores{
+    display: flex; 
+    flex-wrap: wrap; 
+    text-align: center; 
+    gap: 30px; 
+    padding: 20px;
+}
+
+.iconos{
+    flex: 1 1 200px; 
+    text-align: center;
+}
+
 .bg2 {
     background-color: green;
 }
@@ -203,6 +218,10 @@ a{
 
 .margin-40 {
     margin: 40px;
+}
+
+.margin-top{
+    margin-top: 10px;
 }
 
 .margin-100{
