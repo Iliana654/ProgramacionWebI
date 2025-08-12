@@ -6,6 +6,8 @@
     <title>Threads & Four - Bienvenida</title>
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/content.css">
+    <link rel="stylesheet" href="/css/cart-panel.css">
+    <link rel="stylesheet" href="/css/table-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/fontawesome/fontawesome-free-5.15.4-web/css/all.min.css">
     <script src="/js/jquery-3.1.1.min.js"></script>
@@ -167,6 +169,76 @@
             </div>
         </div>
     </section>
+     <!--  ////////////////////// DETALLES DEL PRODUCTO ////////////////////// -->
+     <section id="pag-detalles-producto" class="active-off">
+      <div class="container text-center">
+          <div class="content-control">
+              <div class="content-w-50 container-img" id="ImagenPanel"></div>
+
+              <div class="content-w-50 text-left padding-20 text-size-20">
+                  <h1 id="productoText">Camisa</h1>
+                  <p id="codigoText" hidden>1</p>
+                  <p id="descripcionText">Descripcion</p>
+                  <p>L.<span id="precioText"></span></p>
+                  <p>Talla:</p>
+                  <div class="btn-talla" id="btnTalla"></div>
+                  
+                  <p>En stock: <span id="stockText">1</span></p>
+                  <label for="txtCantidad">Cantidad:</label>
+                  <button type="button" id="btnMenos">-</button>
+                  <input type="text" class="form-control text-center w-10" id="txtCantidad" name="txtCantidad" value="1" min="1" readonly>
+                  <button type="button" id="btnMas">+</button>
+                  <br>
+                  <button type="button" class="checkout-btn margin-top-20" id="btnAgregarCarrito">AGREGAR AL CARRITO</button>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--  ////////////////////// CARRITO DE COMPRAS ////////////////////// -->
+  <div class="cart-panel" id="cart-panel">
+      <div class="cart-header">
+          <h2 class="margin-0">Carrito de compra</h2>
+          <button id="close-cart">&times;</button>
+      </div>
+      <div class="cart-items">
+          <!-- <div id="tbCarrito"></div> -->
+          <table class="table" id="tbCarrito">
+              <thead>
+                  <tr>
+                      <th width="10%">Codigo</th>
+                      <th>Descripcion</th>
+                      <th width="10%">Cantidad</th>
+                      <th width="10%">Precio</th>
+                      <th width="10%">Subtotal</th>
+                      <th width="10%">Total</th>
+                      <th width="10%"></th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+      <div class="cart-footer">
+          <div class="cart-footer-details text-size-20">
+              <div class="fact">
+                  <label for="txtSubTotal">Subtotal:</label>
+                  <input type="text" id="txtSubTotal" name="txtSubTotal" readonly value="0.00">
+              </div>
+              <div class="fact">
+                  <label for="txtImpuesto">ISV 15%:</label>
+                  <input type="text" id="txtImpuesto" name="txtImpuesto" readonly value="0.00">
+              </div>
+              <div class="fact">
+                  <label for="txtTotal">Total:</label>
+                  <input type="text" id="txtTotal" name="txtTotal" readonly value="0.00">
+              </div>
+          </div>
+          <button class="checkout-btn">VER CARRITO</button>
+      </div>
+  </div>
+  <div id="cart-overlay" class="cart-overlay"></div>
+
+
+  <!-- ACÁ EMPIEZAN LAS SECCIONES PARA EL FOOTER -->
     <section id="pag-historia" class="active-off" style="padding: 50px 0;">
         <div class="container">
             <h1 class="margin-20 text-center font-size-40 font-family">¿Quiénes somos?</h1>
@@ -481,5 +553,7 @@
     <script src="/js/control-nav.js"></script>
     <script src="/js/men-content2.js"></script>
     <script src="/js/women-content2.js"></script>
+    <script src="/js/product-details.js"></script>
+    <script src="/js/add-to-cart.js"></script>
 </body>
 </html>
