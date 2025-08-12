@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Threads & Four - Bienvenida</title>
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/content.css">
-    <link rel="stylesheet" href="/css/cart-panel.css">
-    <link rel="stylesheet" href="/css/table-style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/cart-panel.css">
+    <link rel="stylesheet" href="../css/table-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/fontawesome/fontawesome-free-5.15.4-web/css/all.min.css">
     <script src="/js/jquery-3.1.1.min.js"></script>
@@ -18,11 +18,15 @@
         <ul class="nav">
             <li><a class="brand" href="#" id="p-index"><img src="/imagenes/brandTyF.png" alt="Brand" style="height: 80px;"></a></li>
             <div class="menu">
-                <li><a href="#">Nuevo</a></li>
-                <li><a href="#" id="p-hombres">Hombres</a></li>
-                <li><a href="#" id="p-mujeres">Mujeres</a></li>
-                <li><a href="#"><img src="/imagenes/shopping-bag.png" alt="Cart" style="height: 30px;">(0)</a></li>
-            </div>
+              <li><a href="#" id="p-mujeres">Mujeres</a></li>
+              <li><a href="#" id="p-hombres">Hombres</a></li>
+              <li>
+                  <a href="#" id="open-cart">
+                      <img src="/imagenes/shopping-bag.png" alt="Cart" style="height: 30px;">
+                      (<span id="totalProductos">0</span>)
+                  </a>
+              </li>
+          </div>
         </ul>
     </div>
     <section id="pag-principal" class="active-on">
@@ -551,8 +555,9 @@
         </div>
     </footer>
     <script src="/js/control-nav.js"></script>
-    <script src="/js/men-content2.js"></script>
-    <script src="/js/women-content2.js"></script>
+    <script src="/js/control-cart.js"></script>
+    <script src="/js/men-content.js"></script>
+    <script src="/js/women-content.js"></script>
     <script src="/js/product-details.js"></script>
     <script src="/js/add-to-cart.js"></script>
 </body>

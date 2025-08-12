@@ -331,22 +331,25 @@ a{
 }
 
 .producto-card {
-  width: 240px;
-  border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 10px;
-  border-color: gray;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.producto-card:hover {
-  border-color: goldenrod;
-  border-width: 3px;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.8);
-}
+    width: 360px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 10px;
+    border-color: gray;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .producto-card:hover {
+    border-color: goldenrod;
+    border-width: 3px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+  }
 
 .producto-img {
   width: 100%;
@@ -396,21 +399,17 @@ a{
     width: 20%;
 }
 
-/* Fondo gris claro reutilizable */
 .bg-gray-clear {
     background-color: var(--color-second-1);
   }
-  
-  /* Alineaciones y layout rápidos */
+
   .text-right { text-align: right; }
   .jc-space-between { display: flex; justify-content: space-between; }
   
-  /* Helpers de margen/padding */
   .margin-0 { margin: 0; }
   .margin-top-20 { margin-top: 20px; }
   .padding-20 { padding: 20px; }
   
-  /* Imágenes “detalle” centradas y contenidas */
   .img-details {
     max-width: 80%;
     height: auto;
@@ -425,7 +424,6 @@ a{
     overflow: hidden;
   }
   
-  /* Mejora UX en selección de tallas (sin cambiar tu estilo) */
   .btn-talla button {
-    cursor: pointer; /* añade la mano sin tocar tus colores */
+    cursor: pointer; 
   }
