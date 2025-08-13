@@ -804,6 +804,19 @@
         "Descripcion": "Tenis casuales y cómodos, perfectos para el uso diario o actividades deportivas.",
         "Imagen": "/imagenes/Nuevo/TenisHombres.jpg",
         "EsNuevo": true
-    }]
+    },
+
+    {
+        "id": 21,
+        "Nombre": "Camisa Negra Hombre",
+        "Talla": "37-38-39-40-41",
+        "Genero": "Hombre",
+        "Precio": 30.99,
+        "stock": 30,
+        "Descripcion": "Camisa negra formal",
+        "Imagen": "/imagenes/Nuevo/camisaNegra.jpg",
+        "EsNuevo": true
+    }
+]
     }
 ]
