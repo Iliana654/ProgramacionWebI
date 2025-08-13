@@ -18,6 +18,7 @@
         <ul class="nav">
             <li><a class="brand" href="#" id="p-index"><img src="/imagenes/brandTyF.png" alt="Brand" style="height: 80px;"></a></li>
             <div class="menu">
+              <li> <a href="#" id="p-new">Nuevo</a></li>
               <li><a href="#" id="p-mujeres">Mujeres</a></li>
               <li><a href="#" id="p-hombres">Hombres</a></li>
               <li>
@@ -70,13 +71,13 @@
             
             <div class="content-control">
                 <div class="content-w-20">
-                    <h1 class="text-size-20">Categorias</h1>
-                    <p><a class="link-style-1" href="#">Camisas</a></p>
-                    <p><a class="link-style-1" href="#">Camisetas</a></p>
-                    <p><a class="link-style-1" href="#">Pantalones</a></p>
-                    <p><a class="link-style-1" href="#">Calsonetas</a></p>
-                    <p><a class="link-style-1" href="#">Zapatos</a></p>
-                    <hr>
+                  <h1 class="text-size-20">Categoria</h1>
+                  <p><a class="link-style-1" href="#" id="Camisas">Camisas</a></p>
+                  <p><a class="link-style-1" href="#" id="Camisetas">Camisetas</a></p>
+                  <p><a class="link-style-1" href="#" id="pantalones">Pantalones</a></p>
+                  <p><a class="link-style-1" href="#" id="Calsonetas">Calsonetas</a></p> 
+                  <p><a class="link-style-1" href="#" id="zapatos">Zapatos</a></p>
+                  <hr>
 
                     <h1 class="text-size-20">Talla</h1>
                     <div class="btn-talla">
@@ -102,9 +103,9 @@
                     <hr>
 
                     <h1 class="text-size-20">Precio</h1>
-                    <p><a class="link-style-1" href="#">Alto</a></p>
-                    <p><a class="link-style-1" href="#">Medio</a></p>
-                    <p><a class="link-style-1" href="#">Bajo</a></p>
+                    <p><a class="link-style-1" href="#" id="alto">Alto</a></p>
+                    <p><a class="link-style-1" href="#" id="medio">Medio</a></p>
+                    <p><a class="link-style-1" href="#" id="bajo">Bajo</a></p>
                 </div>
                 <div class="content-w-80">
                     <div id="productos-hombres" class="productos-catalogo">
@@ -128,13 +129,13 @@
             <div class="content-control">
                 <div class="content-w-20">
                     <h1 class="text-size-20">Categorias</h1>
-                    <p><a class="link-style-1" href="#">Blusas</a></p>
-                    <p><a class="link-style-1" href="#">Faldas</a></p>
-                    <p><a class="link-style-1" href="#">Pantalones</a></p>
-                    <p><a class="link-style-1" href="#">Short</a></p>
-                    <p><a class="link-style-1" href="#">Tops</a></p>
-                    <p><a class="link-style-1" href="#">Vestidos</a></p>
-                    <p><a class="link-style-1" href="#">Zapatos</a></p>
+                    <p><a class="link-style-1" href="#" id="blusas">Blusas</a></p>
+                    <p><a class="link-style-1" href="#" id="faldas">Faldas</a></p>
+                    <p><a class="link-style-1" href="#" id="pantalones">Pantalones</a></p>
+                    <p><a class="link-style-1" href="#" id="shorts">Short</a></p>
+                    <p><a class="link-style-1" href="#" id="tops">Tops</a></p>
+                    <p><a class="link-style-1" href="#" id="vestidos">Vestidos</a></p>
+                    <p><a class="link-style-1" href="#" id="zapatos">Zapatos</a></p>
                     <hr>
 
                     <h1 class="text-size-20">Talla</h1>
@@ -161,9 +162,9 @@
                     <hr>
 
                     <h1 class="text-size-20">Precio</h1>
-                    <p><a class="link-style-1" href="#">Alto</a></p>
-                    <p><a class="link-style-1" href="#">Medio</a></p>
-                    <p><a class="link-style-1" href="#">Bajo</a></p>
+                    <p><a class="link-style-1" href="#" id="alto">Alto</a></p>
+                    <p><a class="link-style-1" href="#" id="medio">Medio</a></p>
+                    <p><a class="link-style-1" href="#" id="bajo">Bajo</a></p>
                 </div>
                 <div class="content-w-80">
                     <div id="productos-mujeres" class="productos-catalogo">
@@ -183,7 +184,7 @@
                   <h1 id="productoText">Camisa</h1>
                   <p id="codigoText" hidden>1</p>
                   <p id="descripcionText">Descripcion</p>
-                  <p>L.<span id="precioText"></span></p>
+                  <p>$.<span id="precioText"></span></p>
                   <p>Talla:</p>
                   <div class="btn-talla" id="btnTalla"></div>
                   
@@ -340,38 +341,43 @@
             <div class="card">
               <h1 class="font-family font-size-32 text-center margin-20px">Preguntas Frecuentes</h1>
               <details class="faq-item">
-                <summary class="font-family">¿Cómo crear una cuenta?</summary>
-                <p>Haz clic en “Registrarse”, completa tus datos y confirma el correo.</p>
+                <summary>¿Cómo realizo un pedido?</summary>
+                <p>Explora el catálogo (Hombre, Mujer o Prendas Nuevas), elige talla y cantidad, presiona <strong>Agregar al carrito</strong> y finaliza la compra desde el carrito.</p>
               </details>
-          
+        
               <details class="faq-item">
-                <summary>Olvidé mi contraseña ¿Cómo la recupero?</summary>
-                <p>En “Iniciar sesión” elige “Olvidé mi contraseña”, ingresa tu correo y sigue el enlace que te enviamos.</p>
+                <summary>¿Puedo ver o editar mi carrito?</summary>
+                <p>Sí. En el ícono de la bolsa (arriba) verás el total. Desde allí puedes cambiar cantidades o eliminar productos antes de pagar.</p>
               </details>
-          
+        
               <details class="faq-item">
-                <summary>¿Cómo realizar un pedido?</summary>
-                <p>Explora el catálogo, agrega al carrito y completa el pago seguro en línea.</p>
+                <summary>¿Qué métodos de pago aceptan?</summary>
+                <p>Tarjeta de crédito/débito, transferencia y billeteras electrónicas. Revisa <a href="#" id="p-metodos" class="link-style-1">Métodos de pago</a> para los detalles.</p>
               </details>
-          
-              <details class="faq-item">
-                <summary>No encuentro el producto que busco ¿Qué hago?</summary>
-                <p>Escríbenos por WhatsApp o correo y te ayudamos a localizarlo o te sugerimos alternativas.</p>
-              </details>
-          
+        
               <details class="faq-item">
                 <summary>¿Cuál es el plazo de entrega?</summary>
-                <p>De 24 a 72 horas hábiles en zonas principales (puede variar por destino).</p>
+                <p>Entre 24 y 72 horas hábiles en zonas principales (puede variar por destino). Más info en <a href="#" id="p-envios" class="link-style-1">Envíos y devoluciones</a>.</p>
               </details>
-          
-              <details class="faq-item">
-                <summary>¿Cuál es la zona de cobertura?</summary>
-                <p>Enviamos a todo el país. Verifica tu código postal al finalizar la compra.</p>
-              </details>
-          
+        
               <details class="faq-item">
                 <summary>¿Cuál es el costo del envío?</summary>
-                <p>Se calcula automáticamente según tu ubicación y peso del pedido antes de pagar.</p>
+                <p>Se calcula automáticamente según tu ubicación y el peso/volumen del pedido antes de pagar.</p>
+              </details>
+        
+              <details class="faq-item">
+                <summary>¿Hacen envíos a todo el país?</summary>
+                <p>Sí, enviamos a todo el país. Verifica tu zona al finalizar la compra.</p>
+              </details>
+        
+              <details class="faq-item">
+                <summary>¿Puedo cambiar talla o devolver un producto?</summary>
+                <p>Sí. Tienes hasta 7 días hábiles desde la entrega. El producto debe estar sin uso y con empaque original. Consulta <a href="#" id="p-envios" class="link-style-1">Envíos y devoluciones</a>.</p>
+              </details>
+        
+              <details class="faq-item">
+                <summary>¿Cómo sé qué talla elegir?</summary>
+                <p>En la página de cada producto verás las tallas disponibles. Si tienes dudas, escríbenos y te ayudamos a elegir.</p>
               </details>
           </div>
     </section>
@@ -504,6 +510,56 @@
       </div>
     </div>
   </section>
+  <!-- INCLUIR NEW CONTENT -->
+  <section id="pag-new" class="active-off" style="padding: 50px 0;">
+    <div class="container text-center">
+      <div class="content-control">
+        <div class="content-w-50">
+          <img class="img-background margin-10" src="/imagenes/camisanueva.jpg" alt="Nuevo">
+        </div>
+        <div class="content-w-50 text-left">
+          <h1 class="font-size-32 font-family">New Arrivals</h1>
+          <p class="text-size-20 font-family">Lo más reciente para hombre y mujer.</p>
+        </div>
+      </div>
+  
+      <div class="content-control">
+        <div class="content-w-20">
+          <h1 class="text-size-20">Categorías</h1>
+          <p><span class="link-style-1">Blusas</span></p>
+          <p><span class="link-style-1">Faldas</span></p>
+          <p><span class="link-style-1">Pantalones</span></p>
+          <p><span class="link-style-1">Short</span></p>
+          <p><span class="link-style-1">Tops</span></p>
+          <p><span class="link-style-1">Vestidos</span></p>
+          <p><span class="link-style-1">Zapatos</span></p>
+          <hr>
+          <h1 class="text-size-20">Talla</h1>
+          <div class="btn-talla">
+            <button type="button">XS</button><button type="button">S</button>
+            <button type="button">M</button><button type="button">L</button>
+            <button type="button">XL</button>
+            <button type="button">28</button><button type="button">29</button>
+            <button type="button">30</button><button type="button">31</button>
+            <button type="button">32</button><button type="button">33</button>
+            <button type="button">34</button><button type="button">35</button>
+            <button type="button">36</button><button type="button">37</button>
+            <button type="button">38</button><button type="button">39</button>
+            <button type="button">40</button>
+          </div>
+          <hr>
+          <h1 class="text-size-20">Precio</h1>
+          <p><span class="link-style-1">Alto</span></p>
+          <p><span class="link-style-1">Medio</span></p>
+          <p><span class="link-style-1">Bajo</span></p>
+        </div>
+        <div class="content-w-80">
+          <div id="productos-new" class="productos-catalogo"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
     <br>
     <!--  ////////////////////// FOOTER ////////////////////// -->
     <footer class="container text-center">
@@ -517,7 +573,10 @@
             </div>
             <div class="col-md-2 text-center">
                 <p class="text-size-20">Tienda</p>
-                <p class="margin-down font-family"><a class="link-style-1" href="#">Nuevo</a></p>
+
+                <!-- ACTUALIZACIONES ILY---INCLUYTE NUEVO -->
+
+                <p class="margin-down font-family"><a class="link-style-1 nav-nuevos" href="#">Nuevo</a></p>
                 <p class="margin-down font-family"><a class="link-style-1" href="#" id="p-hombres">Hombre</a></p>
                 <p class="margin-down font-family"><a class="link-style-1" href="#" id="p-mujeres">Mujer</a></p>
             </div>
@@ -543,11 +602,13 @@
             </div>
         </div>
     </footer>
+    <!-- INCLUIR NEW-CONTENT -->
     <script src="/js/control-nav.js"></script>
     <script src="/js/control-cart.js"></script>
     <script src="/js/men-content.js"></script>
     <script src="/js/women-content.js"></script>
     <script src="/js/product-details.js"></script>
     <script src="/js/add-to-cart.js"></script>
+    <script src="/js/new-content.js"></script>
 </body>
 </html>
