@@ -24,7 +24,7 @@ $(document).ready(function () {
                 card.append(
                     `<img src="${prod.Imagen}" class="producto-img">`,
                     `<h3>${prod.Nombre}</h3>`,
-                    `<p>$. ${prod.Precio}</p>`,
+                    `<p>L. ${prod.Precio}</p>`,
                     `<button class="btn-detalles btn-comprar" 
                     data-id="${prod.id}" 
                     data-nombre="${prod.Nombre}"
@@ -52,7 +52,6 @@ $(document).ready(function () {
         precio: null
     };
 
-
     $.getJSON("/json/productos.json", function (data) {
         $.each(data, function (i, categoria) {
             let filtrados = $.grep(categoria.Productos, function (prod) {
@@ -67,6 +66,7 @@ $(document).ready(function () {
         mostrarProductos(productosHombre);
         configurarFiltros();
     });
+    
     function mostrarProductos(productos) {
         let contenedor = $("#productos-hombres");
         contenedor.empty();
@@ -86,7 +86,7 @@ $(document).ready(function () {
             card.append(
                 `<img src="${prod.Imagen}" class="producto-img">`,
                 `<h3>${prod.Nombre}</h3>`,
-                `<p>$. ${prod.Precio}</p>`,
+                `<p>L. ${prod.Precio}</p>`,
                 `<button class="btn-detalles btn-comprar" 
                 data-id="${prod.id}" 
                 data-nombre="${prod.Nombre}"

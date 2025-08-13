@@ -71,3 +71,14 @@ $("#p-new , .nav-nuevos, #img-p-newarrivals").on("click", function () {
   $("#pag-hombres , #pag-mujeres").removeClass("active-on").addClass("active-off");
   $("#pag-historia, #pag-comprar , #pag-preguntas, #pag-politicas , #pag-metodos, #pag-envios, #pag-detalles-producto, #pag-atencion").removeClass("active-on").addClass("active-off");
 });
+
+$("#btn-camisas-hombre").on("click", function() {
+    window.scrollTo(0, 0);
+});
+
+$("#btn-vestidos-mujer").on("click", function() {
+    window.scrollTo(0, 0);
+});
+$("#btn-zapatos-mujer").on("click", function() {
+    window.scrollTo(0, 0);
+});
