@@ -13,7 +13,15 @@ $(document).on("click", ".btn-detalles", function () {
     let descripcion = $(this).data("descripcion");
     let precio = $(this).data("precio");
     let imagen = $(this).data("imagen");
-    let stock = $(this).data("stock");
+    //let stock = $(this).data("stock");
+    let productoStock = stockArray.find(item => item.idProducto == idproducto);
+    if (productoStock) {
+        stock = productoStock.stockRestante;
+    }
+    else {
+        stock = $(this).data("stock");
+    }
+
     let talla = $(this).data("talla");
 
     // Cargar los datos del producto seleccionado a la seccion Detalles
@@ -27,11 +35,25 @@ $(document).on("click", ".btn-detalles", function () {
     txtDescripcionProducto.text(descripcion);
     txtPrecio.text(precio);
     txtImagen.html(`<img id="imagenProducto" class="img-details margin-10" src="`+imagen+`" alt="ImagenPanel">`);
-    txtStock.text(stock);
-    txtCantidad.val(1);
-    txtCantidad.attr("max",stock);
-    txtCodigo.text(idproducto);
 
+    ////NUEVOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+    let stockNum = parseInt(stock);
+    if (isNaN(stockNum)) stockNum = 0;
+    
+    if (stockNum <= 0) {
+        txtStock.text(0);
+        $("#txtOutStock").removeAttr("hidden");
+        txtCantidad.val(0);
+        txtCantidad.attr("max", 0);
+    } else {
+        txtStock.text(stockNum);
+        $("#txtOutStock").attr("hidden", true);
+        txtCantidad.val(1);
+        txtCantidad.attr("max", stockNum);
+    }
+    
+    txtCodigo.text(idproducto);
+    
     let tallasArray = talla.split("-");
     mostrarTallasDisponibles(tallasArray);
 });

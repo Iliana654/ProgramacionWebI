@@ -1,18 +1,73 @@
 var carrito = [];
+var stockArray = [];
 let btnAgregarCarrito = $("#btnAgregarCarrito");
 let tablaCarrito = $("#tbCarrito");
 
 btnAgregarCarrito.on("click", function() {
     let codigo_ = $("#codigoText").text();
-    let descripcion_ = $("#productoText").text() + " Talla " + $("#btnTalla .talla-selected").text();
-    let cantidad_ = $("#txtCantidad").val();
+    let talla_ = $("#btnTalla .talla-selected").text();
+    let descripcion_ = $("#productoText").text() + " Talla " + talla_;
+    let cantidad_ = parseInt($("#txtCantidad").val());
     let precio_ = (parseFloat($("#precioText").text())).toFixed(2);
     let subtotal_ = cantidad_ * precio_;
     let total_ = parseFloat((subtotal_ * 0.15) + subtotal_);
     let imagen_ = $("#imagenProducto").attr("src");
     total_ = total_.toFixed(2);
+    // NUEVO
+    let stockActualTxt = ($("#stockText").text() || "").toString().trim();
+    let stockActual = parseInt(stockActualTxt);
+    if (isNaN(stockActual)) stockActual = 0;
 
-    carrito.push({codigo:codigo_, imagen:imagen_, descripcion:descripcion_, cantidad:cantidad_, precio:precio_, subtotal:subtotal_, total:total_});
+    let codigoProductoId = talla_ + codigo_;
+
+    // NUEVO--si es cwro
+    if (stockActual <= 0) {
+        alert("Producto agotaddo.");
+        $("#txtCantidad").val(0).attr("max", 0);
+        return 0;
+    }
+
+    // NUEVO
+    if (cantidad_ > stockActual) {
+        alert("Sólo hay " + stockActual + " en stock para esa talla. Se ajustará la cantidad.");
+        cantidad_ = stockActual;
+        subtotal_ = cantidad_ * parseFloat(precio_);
+        total_ = (subtotal_ * 0.15) + subtotal_;
+    }
+
+    let exists = tablaCarrito.find(`tr[data-codigo="`+codigoProductoId+`"]`);
+
+    if(exists.length > 0) {
+        let agregarProducto = confirm("El producto seleccionado ya se encuentra en el carrito, ¿desea agregar ("+cantidad_+") al carrito?");
+
+        if(agregarProducto) {
+            let itemCarrito = carrito.find(item => item.codigo === codigoProductoId);
+            if (itemCarrito) {
+                // NUEVO
+                let aAgregar = Math.min(cantidad_, stockActual);
+                if (aAgregar <= 0) {
+                    alert("No hay stock adicional disponible.");
+                    return 0;
+                }
+                itemCarrito.cantidad += aAgregar;
+                itemCarrito.subtotal = itemCarrito.cantidad * parseFloat(itemCarrito.precio);
+                itemCarrito.total = (itemCarrito.subtotal * 0.15) + itemCarrito.subtotal;
+
+                let fila = tablaCarrito.find(`tr[data-codigo="`+codigoProductoId+`"]`);
+                fila.find("td").eq(3).text(itemCarrito.cantidad);
+                fila.find("td").eq(5).text(itemCarrito.subtotal.toFixed(2));
+                fila.find("td").eq(6).text(itemCarrito.total.toFixed(2));
+
+                ControlDeStock(stockActual, codigo_, codigoProductoId, aAgregar, "agregar");
+                CalcularTotalFactura();
+                CalcularTotalProductos();
+            }
+        }
+
+        return 0;
+    }
+
+    carrito.push({codigo:codigoProductoId, imagen:imagen_, descripcion:descripcion_, cantidad:cantidad_, precio:precio_, subtotal:subtotal_, total:total_});
 
     tablaCarrito.empty();
     let thead = `<thead>
@@ -47,9 +102,7 @@ btnAgregarCarrito.on("click", function() {
     });
     tablaCarrito.append("</tbody>");
 
-    let stockActual = parseInt($("#stockText").text());
-    $("#stockText").text(stockActual - cantidad_);
-
+    ControlDeStock(stockActual, codigo_, codigoProductoId, cantidad_, "agregar");
     CalcularTotalFactura();
     CalcularTotalProductos(1);
     alert("¡Producto cargado al carrito!");
@@ -78,9 +131,16 @@ function BorrarProducto(i) {
     let op = confirm("¿Desea quitar este producto del carrito?");
     if(op) {
         let stockActual = parseInt($("#stockText").text());
+        if (isNaN(stockActual)) stockActual = 0; // NUEVO: normalizar
+
         let fila = tablaCarrito.find("tbody tr").eq(i);
         let cantDevolver = parseInt(fila.find("td").eq(3).text());
-        $("#stockText").text(stockActual + cantDevolver);
+        let codigoProducto_ = fila.attr("data-codigo");
+        let itemStock = stockArray.find(item => item.codigoProducto === codigoProducto_);
+        let idProducto_ = itemStock.idProducto;
+
+        ControlDeStock(stockActual,idProducto_,codigoProducto_,cantDevolver,"devolver");
+
         carrito.splice(i, 1);
         tablaCarrito.find("tbody tr:eq("+i+")").remove();
         CalcularTotalFactura();
@@ -98,4 +158,51 @@ function CalcularTotalProductos(action) {
         totalProductos = totalProductos - 1;
         $("#totalProductos").text(totalProductos);
     }
+}
+
+// FUNCION PARA LLEVAR CONTROL DEL STOCK ACTUAL ENTRE DIFERENTES PRODUCTOS //
+function ControlDeStock(stock, id, codigo, cantidad, accion) {
+    let productoStock = stockArray.find(item => item.codigoProducto === codigo);
+
+    if(productoStock) {
+        if(accion === "agregar") {
+
+            
+            // NUEVOOOOOOOOOOOOO--este controla el stock
+
+
+
+            if (cantidad > productoStock.stockRestante) cantidad = productoStock.stockRestante;
+            productoStock.stockRestante -= cantidad;
+            productoStock.stockCarrito += cantidad;
+        } else if (accion === "devolver") {
+            productoStock.stockRestante += cantidad;
+            productoStock.stockCarrito -= cantidad;
+        }
+
+    } else {
+        if(accion === "agregar") {
+            let stockNuevo = stock - cantidad;
+            if (stockNuevo < 0) stockNuevo = 0;
+            stockArray.push({idProducto:id,codigoProducto:codigo, stockRestante:stockNuevo, stockCarrito:cantidad});
+        }   
+    }
+
+    // NUEVO 
+    let stockActualEnPantalla = stockArray.find(item => item.codigoProducto === codigo).stockRestante;
+
+    if (stockActualEnPantalla <= 0) {
+        txtStock.text(0);
+        $("#txtOutStock").removeAttr("hidden"); ///Esto es para mostrar lo que puso Tomy de AGOTADO
+        txtCantidad.val(0);
+        txtCantidad.attr("max", 0);
+    } else {
+        $("#stockText").text(stockActualEnPantalla);
+        $("#txtOutStock").attr("hidden", true);
+        let val = parseInt($("#txtCantidad").val(),10) || 1;
+        if (val > stockActualEnPantalla) $("#txtCantidad").val(stockActualEnPantalla);
+        $("#txtCantidad").attr("max", stockActualEnPantalla);
+    }
+    
+    console.log(stockArray);
 }
