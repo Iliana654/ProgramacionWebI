@@ -35,6 +35,10 @@ $(document).on("click", ".btn-detalles", function () {
     txtDescripcionProducto.text(descripcion);
     txtPrecio.text(precio);
     txtImagen.html(`<img id="imagenProducto" class="img-details margin-10" src="`+imagen+`" alt="ImagenPanel">`);
+    txtStock.text(stock);
+    txtCantidad.val(1);
+    txtCantidad.attr("max",stock);
+    txtCodigo.text(idproducto);
 
     ////NUEVOOOOOOOOOOOOOOOOOOOOOOOOOOOO
     let stockNum = parseInt(stock);
@@ -51,9 +55,7 @@ $(document).on("click", ".btn-detalles", function () {
         txtCantidad.val(1);
         txtCantidad.attr("max", stockNum);
     }
-    
-    txtCodigo.text(idproducto);
-    
+
     let tallasArray = talla.split("-");
     mostrarTallasDisponibles(tallasArray);
 });
